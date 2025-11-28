@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net7.0-windows</TargetFramework>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Platforms>AnyCPU;x64</Platforms>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="OpenCvSharp4" Version="4.11.0.20250507" />
+		<PackageReference Include="OpenCvSharp4.runtime.win" Version="4.11.0.20250507" />
+		<PackageReference Include="OpenCvSharp4.Extensions" Version="4.11.0.20250507" />
+	</ItemGroup>
+
+	<!-- Ajouter cette section pour copier automatiquement les fichiers -->
+	<ItemGroup>
+		<Content Include="haarcascade_frontalface_alt.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="deploy.prototxt">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="res10_300x300_ssd_iter_140000.caffemodel">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+	<ItemGroup>
+	  <EditorConfigFiles Remove="D:\FacialRecognitionApp\.editorconfig" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include="D:\FacialRecognitionApp\.editorconfig" />
+	</ItemGroup>
+
+</Project>
